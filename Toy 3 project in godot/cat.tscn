@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4kda22g80wny"]
+
+[ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_mxiry"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rn5j1"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ns34k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3df78"]
+albedo_color = Color(0.231373, 0.270588, 0.470588, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_xb7w6"]
+size = Vector3(1.2, 0.8, 0.01)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7kqg"]
+transparency = 1
+albedo_color = Color(0.0196078, 0.666667, 1, 0.721569)
+
+[node name="Cat" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07143, 0)
+script = ExtResource("1_mxiry")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_rn5j1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_ns34k")
+skeleton = NodePath("../CollisionShape3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_3df78")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+neighbor_distance = 0.5
+debug_path_custom_color = Color(0.0235294, 1, 1, 1)
+debug_path_custom_point_size = 36.85
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0432241, 0.646664, 0.585469)
+mesh = SubResource("PrismMesh_xb7w6")
+surface_material_override/0 = SubResource("StandardMaterial3D_f7kqg")
+
+[connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
