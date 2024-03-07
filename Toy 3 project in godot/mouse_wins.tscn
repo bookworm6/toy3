@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://caf75irtba6bf"]
+
+[ext_resource type="Texture2D" uid="uid://b2h52hqmfkbgn" path="res://Screenshot 2024-02-20 at 2.10.09 PM.png" id="1_8xn5h"]
+
+[node name="MouseWins" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 650.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 42.0
+offset_right = 1021.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Congratulations!
+You defeated the dreaded Cat!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 554.0
+offset_right = 824.0
+offset_bottom = 629.0
+theme_override_font_sizes/font_size = 50
+text = "PLAY AGAIN"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Screenshot2024-02-20At2_10_09 pm" type="Sprite2D" parent="."]
+position = Vector2(580, 368)
+scale = Vector2(0.455298, 0.486765)
+texture = ExtResource("1_8xn5h")

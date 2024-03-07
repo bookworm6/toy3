@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://irkqqc23gm63"]
+
+[ext_resource type="Texture2D" uid="uid://fm7qdj57620n" path="res://Screenshot 2024-02-20 at 2.18.52 PM.png" id="1_iqali"]
+
+[node name="CatWins" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 151.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "The dreaded cat killed you"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Screenshot2024-02-20At2_18_52 pm" type="Sprite2D" parent="."]
+position = Vector2(589, 331)
+scale = Vector2(0.531615, 0.516)
+texture = ExtResource("1_iqali")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 553.0
+offset_right = 739.0
+offset_bottom = 616.0
+theme_override_font_sizes/font_size = 50
+text = "PLAY AGAIN"
